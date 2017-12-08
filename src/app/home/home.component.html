@@ -1,18 +1,39 @@
-<div  style="text-align:center">
-  <h1  class="display-1" style="color: #f5fff6" > SPACE X </h1>
+<div *ngIf="info">
+  <div style="text-align:center">
+
+
+  <h1 class="display-1" style="color: #f5fff6"> SPACE X </h1>
 </div>
-<div class="row">
-<div  class="card" style="width: 20rem;">
-  <div class="card-body">
-    <h4 class="card-title">Latest </h4>
-    <h6 class="card-subtitle mb-2 text-muted">launch information</h6>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="card-link">Card link</a>
-    <a href="#" class="card-link">Another link</a>
+<div class="row" style="margin-left: 20px">
+  <div style="padding: 10px" class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-3"> {{info.name}} </h1>
+      <p>Founded: {{info.founded}} | </p>
+      <p>Founder/CEO/COO: {{info.ceo}} | </p>
+      <p>Employees: {{info.employees}} | </p>
+      <p>Vehicles: {{info.vehicles}} | </p>
+      <p>Launch Sites: {{info.launch_sites}} | </p>
+      <p>Test Sites: {{info.test_sites}} | </p>
+      <p>CTO Propulsion: {{info.cto_propulsion}}</p> <br>
+      <p>Valuation: {{info.valuation}}</p> <br>
+      <p>Headquarters: {{info.headquarters.address}},{{info.headquarters.city}},{{info.headquarters.state}}.</p> <br>
+      <p class="lead">{{info.summary}}</p>
+      <h3 class="display-5">  </h3>
+    </div>
   </div>
-</div>
-<div align="right">
-  <img src="https://streak.club/img/dXBsb2Fkcy9pbWFnZS81OTI5LmdpZg==/600x/7Q1%2FE2.gif" width="1229." height="400">
+  <!-- <div align="right">
+     <img src="https://streak.club/img/dXBsb2Fkcy9pbWFnZS81OTI5LmdpZg==/600x/7Q1%2FE2.gif" width="1229." height="400">
+   </div>-->
+  <div class="card" style="width: 20rem;">
+    <div class="card-body">
+      <h4 class="card-title">Latest </h4>
+      <h6 class="card-subtitle mb-2 text-muted">launch information</h6>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+        content.</p>
+      <a href="#" class="card-link">Card link</a>
+      <a href="#" class="card-link">Another link</a>
+    </div>
+  </div>
 </div>
 </div>
 

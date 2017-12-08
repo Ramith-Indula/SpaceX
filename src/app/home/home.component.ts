@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {SpaceXService} from '../service/space-x.service';
+import 'rxjs/add/operator/map';
+
 
 @Component({
   selector: 'app-home',
@@ -7,9 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  public info;
+
+  constructor(private spacexService: SpaceXService) {
+  }
 
   ngOnInit() {
+
+    this.spacexService.getCompanyDetails().subscribe(data => {
+      this.info = data;
+      console.log(data);
+    });
+
+
   }
 
 }
