@@ -1,12 +1,12 @@
-<div *ngIf="info">
-  <div style="text-align:center">
+<div *ngIf="info && latestLaunchInfo" >
 
-
+  <div style="text-align:center; padding-bottom:110px">
   <h1 class="display-1" style="color: #f5fff6"> SPACE X </h1>
 </div>
-<div class="row" style="margin-left: 20px">
-  <div style="padding: 10px" class="jumbotron jumbotron-fluid">
-    <div class="container">
+  <div class="container container-fluid">
+    <div class="row">
+    <div class="col-lg-8">
+    <div class="jumbotron">
       <h1 class="display-3"> {{info.name}} </h1>
       <p>Founded: {{info.founded}} | </p>
       <p>Founder/CEO/COO: {{info.ceo}} | </p>
@@ -24,16 +24,21 @@
   <!-- <div align="right">
      <img src="https://streak.club/img/dXBsb2Fkcy9pbWFnZS81OTI5LmdpZg==/600x/7Q1%2FE2.gif" width="1229." height="400">
    </div>-->
-  <div class="card" style="width: 20rem;">
+      <div class="col-lg-4">
+  <div class="card">
     <div class="card-body">
       <h4 class="card-title">Latest </h4>
       <h6 class="card-subtitle mb-2 text-muted">launch information</h6>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-        content.</p>
-      <a href="#" class="card-link">Card link</a>
-      <a href="#" class="card-link">Another link</a>
+      <a routerLink="/launches" class="card-link" ><p class="card-text"> Rocket Name: {{latestLaunchInfo.rocket.rocket_name}}</p><br></a>
+      <p class="card-text"> Flight Number: {{latestLaunchInfo.flight_number}}</p><br>
+      <p class="card-text"> Launch Year: {{latestLaunchInfo.launch_year}}</p><br>
+      <p class="card-text"> Launch Date Local: {{latestLaunchInfo.launch_date_local}}</p><br>
+      <a routerLink="/launchpads" class="card-link" (click)="" ><p class="card-text"> LaunchPad Name: {{latestLaunchInfo.launch_site.site_name}}</p><br><br></a>
+      <a routerLink="/launches" class="card-link" > <button type="button" class="btn btn-dark">View full launch details</button></a>
     </div>
+  </div>
+
+</div>
   </div>
 </div>
 </div>
-

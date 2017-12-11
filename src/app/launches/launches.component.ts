@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {SpaceXService} from '../service/space-x.service';
 
 @Component({
   selector: 'app-launches',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LaunchesComponent implements OnInit {
 
-  constructor() { }
+  public pastLaunches;
 
-  ngOnInit() {
+  constructor(private spacexService: SpaceXService) {
   }
 
+  ngOnInit() {
+    this.getPastLaunches();
+  }
+
+  getPastLaunches() {
+    this.spacexService.getAllPastLaunches().subscribe(data => {
+      this.pastLaunches = data;
+    });
+  }
 }

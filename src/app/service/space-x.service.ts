@@ -11,4 +11,16 @@ export class SpaceXService {
   getCompanyDetails() {
     return this.http.get('https://api.spacexdata.com/v2/info');
   }
+  getLatestLaunchDetails() {
+    return this.http.get('https://api.spacexdata.com/v2/launches/latest');
+  }
+  getShuttleDetails() {
+  return this.http.get('https://api.spacexdata.com/v2/rockets');
+  }
+  getLaunchPadDetails() {
+    return this.http.get('https://api.spacexdata.com/v2/launchpads');
+  }
+  getAllPastLaunches() {
+    return this.http.get('https://api.spacexdata.com/v2/launches');
+  }
 }

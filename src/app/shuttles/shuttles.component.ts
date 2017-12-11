@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {SpaceXService} from '../service/space-x.service';
 
 @Component({
   selector: 'app-shuttles',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShuttlesComponent implements OnInit {
 
-  constructor() { }
+  public shuttleInfo;
 
-  ngOnInit() {
+  constructor(private spacexService: SpaceXService) {
+
   }
 
+  ngOnInit() {
+    this.getAllShuttleDetails();
+  }
+
+  getAllShuttleDetails() {
+    this.spacexService.getShuttleDetails()
+      .subscribe(data => {
+      this.shuttleInfo = data;
+      console.log(data);
+    });
+  }
 }

@@ -6,25 +6,16 @@
       <th scope="col">Flight ID</th>
       <th scope="col">Launch Year & Date</th>
       <th scope="col">Rocket Name</th>
+      <th scope="col">Launch Pad</th>
     </tr>
     </thead>
     <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colspan="2">...</td>
-      <td>...</td>
+    <tr *ngFor="let launches of pastLaunches; let i=index">
+      <th scope="row">{{i+1}}</th>
+      <td>00{{launches.flight_number}}</td>
+      <td>{{launches.launch_year}} / {{launches.launch_date_local}}</td>
+      <td><a routerLink="/shuttles" class="card-link" >{{launches.rocket.rocket_name}}</a></td>
+      <td><a routerLink="/launchpads" class="card-link" >{{launches.launch_site.site_name}}</a></td>
     </tr>
     </tbody>
   </table>

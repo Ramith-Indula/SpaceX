@@ -9,22 +9,11 @@
     </tr>
     </thead>
     <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colspan="2">...</td>
-      <td>...</td>
+    <tr *ngFor="let launchpad of launchPadDetails; let i= index">
+      <th scope="row">{{i+1}}</th>
+      <td>{{launchpad.id}}</td>
+      <td>{{launchpad.full_name}}</td>
+      <td>{{launchpad.status}}</td>
     </tr>
     </tbody>
   </table>

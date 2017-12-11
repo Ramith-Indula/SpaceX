@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {SpaceXService} from '../service/space-x.service';
 
 @Component({
   selector: 'app-launchpads',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LaunchpadsComponent implements OnInit {
 
-  constructor() { }
+  public launchPadDetails;
 
-  ngOnInit() {
+  constructor(private spacexService: SpaceXService) {
   }
 
+  ngOnInit() {
+    this.getAllLaunchPadDetails();
+  }
+
+  getAllLaunchPadDetails() {
+    this.spacexService.getLaunchPadDetails().subscribe(data => {
+      this.launchPadDetails = data;
+    });
+
+  }
 }
