@@ -10,12 +10,14 @@
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let launches of pastLaunches; let i=index">
+    <tr *ngFor="let launches of pastLaunches; let i=index" >
       <th scope="row">{{i+1}}</th>
       <td>00{{launches.flight_number}}</td>
       <td>{{launches.launch_year}} / {{launches.launch_date_local}}</td>
-      <td><a routerLink="/shuttles" class="card-link" >{{launches.rocket.rocket_name}}</a></td>
-      <td><a routerLink="/launchpads" class="card-link" >{{launches.launch_site.site_name}}</a></td>
+      <td><a routerLink="/shuttle" class="card-link" (click)="onSelectL(launches.rocket.rocket_id)">
+        {{launches.rocket.rocket_name}}</a></td>
+      <td><a routerLink="/launchpad" class="card-link" (click)="onSelect(launches.launch_site.site_id)">
+        {{launches.launch_site.site_name}}</a></td>
     </tr>
     </tbody>
   </table>

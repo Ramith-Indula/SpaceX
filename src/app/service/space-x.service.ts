@@ -23,4 +23,10 @@ export class SpaceXService {
   getAllPastLaunches() {
     return this.http.get('https://api.spacexdata.com/v2/launches');
   }
+  getShuttle(id) {
+    return this.http.get('https://api.spacexdata.com/v2/rockets/' + id);
+  }
+  getLaunchPad(id) {
+    return this.http.get('https://api.spacexdata.com/v2/launchpads/' + id);
+  }
 }

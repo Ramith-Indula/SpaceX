@@ -9,7 +9,7 @@
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let launchpad of launchPadDetails; let i= index">
+    <tr *ngFor="let launchpad of launchPadDetails; let i= index" (click)="onSelect(launchpad.id)">
       <th scope="row">{{i+1}}</th>
       <td>{{launchpad.id}}</td>
       <td>{{launchpad.full_name}}</td>

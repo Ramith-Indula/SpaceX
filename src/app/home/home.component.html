@@ -29,12 +29,14 @@
     <div class="card-body">
       <h4 class="card-title">Latest </h4>
       <h6 class="card-subtitle mb-2 text-muted">launch information</h6>
-      <a routerLink="/launches" class="card-link" ><p class="card-text"> Rocket Name: {{latestLaunchInfo.rocket.rocket_name}}</p><br></a>
+      <a routerLink="/shuttle" class="card-link" (click)="onSelectL(latestLaunchInfo.rocket.rocket_id)" >
+        <p class="card-text"> Rocket Name: {{latestLaunchInfo.rocket.rocket_name}}</p><br></a>
       <p class="card-text"> Flight Number: {{latestLaunchInfo.flight_number}}</p><br>
       <p class="card-text"> Launch Year: {{latestLaunchInfo.launch_year}}</p><br>
       <p class="card-text"> Launch Date Local: {{latestLaunchInfo.launch_date_local}}</p><br>
-      <a routerLink="/launchpads" class="card-link" (click)="" ><p class="card-text"> LaunchPad Name: {{latestLaunchInfo.launch_site.site_name}}</p><br><br></a>
-      <a routerLink="/launches" class="card-link" > <button type="button" class="btn btn-dark">View full launch details</button></a>
+      <a routerLink="/launchpads" class="card-link" (click)="onSelect(latestLaunchInfo.launch_site.site_id)" >
+        <p class="card-text"> LaunchPad Name: {{latestLaunchInfo.launch_site.site_name}}</p><br><br></a>
+      <a routerLink="/launches" class="card-link" > <button type="button" class="btn btn-dark">View all launch details</button></a>
     </div>
   </div>
 

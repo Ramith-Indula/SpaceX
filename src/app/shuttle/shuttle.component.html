@@ -1,0 +1,41 @@
+<div *ngIf="shuttle">
+  <div class="container container-fluid" style="margin-top: 100px">
+    <div class="jumbotron">
+      <h1 class="display-3">{{shuttle.name}}</h1><br><br>
+      <p class="lead">{{shuttle.description}}</p>
+      <hr class="my-4">
+      <p><b>ID:</b> {{shuttle.id}}</p>
+      <p><b>Type:</b> {{shuttle.type}}</p>
+      <p><b>Active:</b> {{shuttle.active}}</p>
+      <p><b>Stages:</b> {{shuttle.stages}}</p>
+      <p><b>Boosters:</b> {{shuttle.boosters}}</p>
+      <p><b>Success Rate Pct:</b> {{shuttle.success_rate_pct}}</p>
+      <p><b>First Flight:</b> {{shuttle.first_flight}}</p>
+      <p><b>Country:</b> {{shuttle.country}}</p>
+      <p><b>Company:</b> {{shuttle.company}}</p>
+      <hr class="my-4">
+      <h3 class="display-7">Other Details</h3>
+      <p><b>height:</b> </p>
+      <ul>
+      <li>Meters - {{shuttle.height.meters}}</li>
+      <li>Feet - {{shuttle.height.feet}}</li>
+    </ul>
+      <p><b>Diameter:</b> </p>
+      <ul>
+      <li>Meters - {{shuttle.diameter.meters}}</li>
+      <li>Feet - {{shuttle.diameter.feet}}</li>
+    </ul>
+      <p><b>Mass:</b> </p>
+      <ul>
+      <li>kg - {{shuttle.mass.kg}}</li>
+      <li>lb - {{shuttle.mass.lb}}</li>
+    </ul>
+      <p><b>Mass:</b> </p>
+      <ul>
+      <li>kg - {{shuttle.mass.kg}}</li>
+      <li>lb - {{shuttle.mass.lb}}</li>
+    </ul>
+
+        </div>
+  </div>
+</div>

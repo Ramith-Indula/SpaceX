@@ -9,7 +9,7 @@
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor='let shuttle of shuttleInfo; let i = index' (click)="onSelect(i)">
+      <tr *ngFor='let shuttle of shuttleInfo; let i = index' (click)="onSelect(shuttle.id)">
         <th scope="row">{{ i+1 }}</th>
         <td >{{shuttle.id}}</td>
         <td >{{shuttle.name}}</td>

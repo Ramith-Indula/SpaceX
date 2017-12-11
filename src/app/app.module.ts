@@ -11,6 +11,8 @@ import {LaunchesComponent} from './launches/launches.component';
 import {RouterModule} from '@angular/router';
 import {HttpClientModule} from '@angular/common/http';
 import {SpaceXService} from './service/space-x.service';
+import { ShuttleComponent } from './shuttle/shuttle.component';
+import { LaunchPadComponent } from './launch-pad/launch-pad.component';
 
 
 @NgModule({
@@ -20,7 +22,9 @@ import {SpaceXService} from './service/space-x.service';
     HomeComponent,
     ShuttlesComponent,
     LaunchpadsComponent,
-    LaunchesComponent
+    LaunchesComponent,
+    ShuttleComponent,
+    LaunchPadComponent
   ],
   imports: [
     BrowserModule,
@@ -39,8 +43,15 @@ import {SpaceXService} from './service/space-x.service';
         component: LaunchpadsComponent
       },
       {
+        path: 'launchpad',
+        component: LaunchPadComponent
+      },
+      {
         path: 'launches',
         component: LaunchesComponent
+      },{
+        path: 'shuttle',
+        component: ShuttleComponent
       },
       {
         path: '**',

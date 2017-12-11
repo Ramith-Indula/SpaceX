@@ -1,0 +1,20 @@
+<div *ngIf="launchPad">
+  <div class="container container-fluid" style="margin-top: 100px">
+  <div class="jumbotron">
+    <h1 class="display-3">{{launchPad.full_name}}</h1>
+    <hr class="my-4">
+    <p><b>ID:</b> {{launchPad.id}}</p>
+    <p><b>Status:</b> {{launchPad.status}}</p>
+    <p><b>Location Name:</b> {{launchPad.location.name}}</p>
+    <p><b>Location region:</b> {{launchPad.location.region}}</p>
+    <p><b>Location latitude:</b> {{launchPad.location.latitude}}</p>
+    <p><b>Location longitude:</b> {{launchPad.location.longitude}}</p>
+    <p><b>Vehicles Launched:</b> {{launchPad.vehicles_launched}}</p>
+    <hr class="my-4">
+    <p class="lead">{{launchPad.details}}</p>
+  </div>
+  </div>
+</div>
+
+
+

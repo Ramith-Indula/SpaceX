@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {SpaceXService} from '../service/space-x.service';
+import { Router} from '@angular/router';
 
 @Component({
   selector: 'app-shuttles',
@@ -10,7 +11,7 @@ export class ShuttlesComponent implements OnInit {
 
   public shuttleInfo;
 
-  constructor(private spacexService: SpaceXService) {
+  constructor( private spacexService: SpaceXService, private router: Router) {
 
   }
 
@@ -21,8 +22,11 @@ export class ShuttlesComponent implements OnInit {
   getAllShuttleDetails() {
     this.spacexService.getShuttleDetails()
       .subscribe(data => {
-      this.shuttleInfo = data;
-      console.log(data);
-    });
+        this.shuttleInfo = data;
+      });
+  }
+
+  onSelect(rocketid) {
+    this.router.navigate(['/shuttle'], {queryParams: {id: rocketid}});
   }
 }
